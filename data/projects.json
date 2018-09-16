@@ -1,0 +1,238 @@
+{
+  "projects": [
+    {
+      "title": "Kings Of Beer",
+      "uid": "kings-of-beer",
+      "thumbnail": "kob_thumbnail.png",
+      "theme": {
+        "background_color": "#000000",
+        "text_color": "#ffffff"
+      },
+      "client_id": "budweiser",
+      "role": "Art Director and Designer",
+      "description": "Description",
+      "agency_id": "ace"
+    },
+    {
+      "title": "Master & Dynamic",
+      "uid": "master-dynamic",
+      "thumbnail": "md_still_01.png",
+      "theme": {
+        "background_color": "#000000",
+        "text_color": "#ffffff"
+      },
+      "client_id": "master-dynamic",
+      "role": "Art / Design Director",
+      "description": "<p>We worked closely with Nike Football to design and direct the launch campaign for the all new Mercurial with revolutionary Flyknit-360 technology. The project called upon a range of our creative capabilities; from shooting global superstars, to experimental 3D animation and robust typographic systems.</p><p>As directors we had the privilege of working with the beautiful game’s biggest names; Cristiano Ronaldo, Neymar Jr, Kylian Mbappe, Marco Asensio, Lieke Martens, and wonder-kid Karamoko Dembele.</p>",
+      "agency_id": "ace",
+      "content": [
+        {
+          "position": 10,
+          "type": "video",
+          "content": {
+            "type": "vimeo",
+            "id": "192130017",
+            "ratio": "16:9"
+          }
+        },
+        {
+          "position": 20,
+          "type": "grid",
+          "content": [
+            {
+              "position": 1,
+              "type": "image",
+              "content": {
+                "location": "local",
+                "src": "md_still_01.png"
+              }
+            },
+            {
+              "position": 1,
+              "type": "image",
+              "content": {
+                "location": "local",
+                "src": "md_still_02.png"
+              }
+            }
+          ]
+        },
+        {
+          "position": 30,
+          "type": "image",
+          "content": {
+            "location": "local",
+            "src": "md_still_03.png"
+          }
+        },
+        {
+          "position": 40,
+          "type": "grid",
+          "content": [
+            {
+              "position": 1,
+              "type": "video",
+              "content": {
+                "type": "hosted",
+                "src": "md_film_SQ_02.mp4",
+                "ratio": "1:1"
+              }
+            },
+            {
+              "position": 1,
+              "type": "image",
+              "content": {
+                "location": "local",
+                "src": "md_still_02.png"
+              }
+            },
+            {
+              "position": 1,
+              "type": "image",
+              "content": {
+                "location": "local",
+                "src": "md_still_03.png"
+              }
+            },
+            {
+              "position": 1,
+              "type": "image",
+              "content": {
+                "location": "local",
+                "src": "md_still_04.png"
+              }
+            },
+            {
+              "position": 1,
+              "type": "video",
+              "content": {
+                "type": "hosted",
+                "src": "md_film_SQ_01.mp4",
+                "ratio": "1:1"
+              }
+            },
+            {
+              "position": 1,
+              "type": "image",
+              "content": {
+                "location": "local",
+                "src": "md_still_06.png"
+              }
+            }
+          ]
+        },
+        {
+          "position": 50,
+          "type": "section",
+          "content": {
+            "title": "Production"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Joos Tricot",
+      "uid": "joos-tricot",
+      "thumbnail": "joostricot_thumbnail.png",
+      "theme": {
+        "background_color": "#000000",
+        "text_color": "#ffffff"
+      },
+      "client_id": "natalie-joos",
+      "role": "Designer",
+      "description": "Description",
+      "agency_id": null
+    },
+    {
+      "title": "OFFLINE Agency",
+      "uid": "offline",
+      "thumbnail": "offline_thumbnail.gif",
+      "theme": {
+        "background_color": "#000000",
+        "text_color": "#ffffff"
+      },
+      "client_id": "offline",
+      "role": "Creative Director",
+      "description": "Description",
+      "agency_id": null
+    },
+    {
+      "title": "Roula",
+      "uid": "roula",
+      "thumbnail": "roula_thumbnail.png",
+      "theme": {
+        "background_color": "#000000",
+        "text_color": "#ffffff"
+      },
+      "client_id": "roula",
+      "role": "Designer",
+      "description": "Description",
+      "agency_id": null
+    },
+    {
+      "title": "Gentleman's Brand Co",
+      "uid": "gentlemans-brand-co",
+      "thumbnail": "roula_thumbnail.png",
+      "theme": {
+        "background_color": "#000000",
+        "text_color": "#ffffff"
+      },
+      "client_id": "roula",
+      "role": "Designer",
+      "description": "Description",
+      "agency_id": null
+    },
+    {
+      "title": "Dean & DeLuca Performance",
+      "uid": "dean-deluca-performance",
+      "thumbnail": "roula_thumbnail.png",
+      "theme": {
+        "background_color": "#000000",
+        "text_color": "#ffffff"
+      },
+      "client_id": "dean-deluca",
+      "role": "Designer",
+      "description": "Description",
+      "agency_id": null
+    },
+    {
+      "title": "Food Interrupted",
+      "uid": "food-interrupted",
+      "thumbnail": "roula_thumbnail.png",
+      "theme": {
+        "background_color": "#000000",
+        "text_color": "#ffffff"
+      },
+      "client_id": "panera",
+      "role": "Art / Design Director",
+      "description": "Description",
+      "agency_id": null
+    },
+    {
+      "title": "The Future Is Voting",
+      "uid": "the-future-is-voting",
+      "thumbnail": "roula_thumbnail.png",
+      "theme": {
+        "background_color": "#000000",
+        "text_color": "#ffffff"
+      },
+      "client_id": "headcount",
+      "role": "Designer",
+      "description": "Description",
+      "agency_id": null
+    },
+    {
+      "title": "Gear Up",
+      "uid": "gear-up",
+      "thumbnail": "roula_thumbnail.png",
+      "theme": {
+        "background_color": "#000000",
+        "text_color": "#ffffff"
+      },
+      "client_id": "the-north-face",
+      "role": "Designer",
+      "description": "Description",
+      "agency_id": null
+    }
+  ]
+}
