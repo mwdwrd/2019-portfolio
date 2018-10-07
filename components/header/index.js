@@ -1,5 +1,4 @@
 import React from 'react';
-import { locale } from '../../util/locale'
 import Router from 'next/router';
 import * as Style from './style.js';
 
@@ -10,44 +9,21 @@ class Header extends React.Component {
 
   render() {
 
-    return (
+    return ( 
       <Style.Wrapper>
         <Style.FlexWrapper>
 
-          <Style.LogoWrapper>
-            <Style.Logo>
-              <Style.BiLine>
-                <Style.MenuItemLink active={true} onClick={() => this.navigateTo('/')}>
-                  {locale.en.title}
-                </Style.MenuItemLink>
-              </Style.BiLine>
-            </Style.Logo>
-          </Style.LogoWrapper>
+          <Style.LeftWrapper>
+            <Style.LogoLink onClick={() => this.navigateTo('/')}>
+              <Style.Logo>MW</Style.Logo>
+            </Style.LogoLink>
+          </Style.LeftWrapper>
 
-          <Style.MenuWrapper>
-            <Style.Menu>
-              <Style.MenuItem>
-                <Style.MenuItemLink active={true} onClick={() => this.navigateTo('/about')}>
-                  Biography
-                </Style.MenuItemLink>
-              </Style.MenuItem>
-              <Style.MenuItem>
-                <Style.MenuItemLink active={true} onClick={() => this.navigateTo('/')}>
-                  Selected Works
-                </Style.MenuItemLink>
-              </Style.MenuItem>
-              <Style.MenuItem>
-                <Style.MenuItemLink active={true} onClick={() => this.navigateTo('/listen')}>
-                  Listen
-                </Style.MenuItemLink>
-              </Style.MenuItem>
-              <Style.MenuItem>
-                <Style.MenuItemLink active={true} onClick={() => this.navigateTo('/products')}>
-                  Products
-                </Style.MenuItemLink>
-              </Style.MenuItem>
-            </Style.Menu>
-          </Style.MenuWrapper>
+          <Style.RightWrapper>
+            <span>M. Woodward</span>
+            <span>Creative Director — New York</span>
+            <span>+1 (646) 571-9510</span>
+          </Style.RightWrapper>
 
         </Style.FlexWrapper>
       </Style.Wrapper>

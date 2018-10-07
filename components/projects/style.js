@@ -9,13 +9,17 @@ export const Projects = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-column-gap: 16px;
   width: 100%;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+    display: grid;
+    grid-gap: 35px;
+    grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
 `
 
 export const ProjectWrapper = styled.li`
   width: 100%;
   margin-bottom: 16px;
+
+  &:nth-child(2n - 1) {
+    margin-top: 0;
+  }
 `

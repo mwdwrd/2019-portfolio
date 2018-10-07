@@ -1,25 +1,19 @@
 {
   "projects": [
     {
-      "title": "Kings Of Beer",
-      "uid": "kings-of-beer",
-      "thumbnail": "kob_thumbnail.png",
-      "theme": {
-        "background_color": "#000000",
-        "text_color": "#ffffff"
-      },
-      "client_id": "budweiser",
-      "role": "Art Director and Designer",
-      "description": "Description",
-      "agency_id": "ace"
-    },
-    {
-      "title": "Master & Dynamic",
+      "title": "MW07 True Wireless",
+      "client": "Master & Dynamic",
+      "date": "11/2018",
       "uid": "master-dynamic",
-      "thumbnail": "md_still_01.png",
+      "thumbnail": {
+        "type": "image",
+        "location": "local",
+        "src": "md_still_01.png",
+        "ratio": "1:1"
+      },
       "theme": {
-        "background_color": "#000000",
-        "text_color": "#ffffff"
+        "background_color": "#ffffff",
+        "text_color": "#000000"
       },
       "client_id": "master-dynamic",
       "role": "Art / Design Director",
@@ -31,39 +25,19 @@
           "type": "video",
           "content": {
             "type": "vimeo",
-            "id": "192130017",
+            "id": "290822041",
             "ratio": "16:9"
           }
         },
         {
-          "position": 20,
-          "type": "grid",
+          "position": 15,
+          "type": "text",
           "content": [
             {
-              "position": 1,
-              "type": "image",
-              "content": {
-                "location": "local",
-                "src": "md_still_01.png"
-              }
-            },
-            {
-              "position": 1,
-              "type": "image",
-              "content": {
-                "location": "local",
-                "src": "md_still_02.png"
-              }
+              "title": "Movement ignites opportunity",
+              "body": "<p>As a brand, we believe movement ignites opportunity. The brand system highlights movement as effortless as tapping our app to request ride and offers options to celebrate the endless opportunity movement makes possible.</p>"
             }
           ]
-        },
-        {
-          "position": 30,
-          "type": "image",
-          "content": {
-            "location": "local",
-            "src": "md_still_03.png"
-          }
         },
         {
           "position": 40,
@@ -131,9 +105,45 @@
       ]
     },
     {
+      "title": "Kings Of Beer",
+      "client": "Budweiser",
+      "date": "Unreleased",
+      "uid": "kings-of-beer",
+      "thumbnail": {
+        "type": "image",
+        "location": "local",
+        "src": "BW_KOB_Tim_110.jpg",
+        "ratio": "2:3"
+      },
+      "theme": {
+        "background_color": "#000000",
+        "text_color": "#ffffff"
+      },
+      "client_id": "budweiser",
+      "role": "Art Director and Designer",
+      "description": "Description",
+      "agency_id": "ace",
+      "content": [
+        {
+          "position": 1,
+          "type": "video",
+          "content": {
+            "type": "vimeo",
+            "id": "290831442",
+            "ratio": "2.39:1"
+          }
+        }
+      ]
+    },
+    {
       "title": "Joos Tricot",
       "uid": "joos-tricot",
-      "thumbnail": "joostricot_thumbnail.png",
+      "thumbnail": {
+        "type": "image",
+        "location": "local",
+        "src": "joostricot_thumbnail.png",
+        "ratio": "6:4"
+      },
       "theme": {
         "background_color": "#000000",
         "text_color": "#ffffff"
@@ -146,7 +156,12 @@
     {
       "title": "OFFLINE Agency",
       "uid": "offline",
-      "thumbnail": "offline_thumbnail.gif",
+      "thumbnail": {
+        "type": "image",
+        "location": "local",
+        "src": "offline_thumbnail.gif",
+        "ratio": "6:4"
+      },
       "theme": {
         "background_color": "#000000",
         "text_color": "#ffffff"
@@ -159,7 +174,12 @@
     {
       "title": "Roula",
       "uid": "roula",
-      "thumbnail": "roula_thumbnail.png",
+      "thumbnail": {
+        "type": "image",
+        "location": "local",
+        "src": "roula_thumbnail.png",
+        "ratio": "6:4"
+      },
       "theme": {
         "background_color": "#000000",
         "text_color": "#ffffff"
@@ -172,7 +192,12 @@
     {
       "title": "Gentleman's Brand Co",
       "uid": "gentlemans-brand-co",
-      "thumbnail": "roula_thumbnail.png",
+      "thumbnail": {
+        "type": "image",
+        "location": "local",
+        "src": null,
+        "ratio": "6:4"
+      },
       "theme": {
         "background_color": "#000000",
         "text_color": "#ffffff"
@@ -185,7 +210,12 @@
     {
       "title": "Dean & DeLuca Performance",
       "uid": "dean-deluca-performance",
-      "thumbnail": "roula_thumbnail.png",
+      "thumbnail": {
+        "type": "image",
+        "location": "local",
+        "src": null,
+        "ratio": "6:4"
+      },
       "theme": {
         "background_color": "#000000",
         "text_color": "#ffffff"
@@ -198,7 +228,12 @@
     {
       "title": "Food Interrupted",
       "uid": "food-interrupted",
-      "thumbnail": "roula_thumbnail.png",
+      "thumbnail": {
+        "type": "image",
+        "location": "local",
+        "src": null,
+        "ratio": "6:4"
+      },
       "theme": {
         "background_color": "#000000",
         "text_color": "#ffffff"
@@ -211,7 +246,12 @@
     {
       "title": "The Future Is Voting",
       "uid": "the-future-is-voting",
-      "thumbnail": "roula_thumbnail.png",
+      "thumbnail": {
+        "type": "image",
+        "location": "local",
+        "src": null,
+        "ratio": "6:4"
+      },
       "theme": {
         "background_color": "#000000",
         "text_color": "#ffffff"
@@ -224,7 +264,12 @@
     {
       "title": "Gear Up",
       "uid": "gear-up",
-      "thumbnail": "roula_thumbnail.png",
+      "thumbnail": {
+        "type": "image",
+        "location": "local",
+        "src": null,
+        "ratio": "6:4"
+      },
       "theme": {
         "background_color": "#000000",
         "text_color": "#ffffff"

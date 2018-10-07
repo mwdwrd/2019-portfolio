@@ -9,3 +9,9 @@ export const ContentItem = styled.div`
   display: block;
   margin: 0;
 `
+export const Spacer = styled.div`
+  display: block;
+  margin: 0;
+  height: 80px;
+  width: 100%;
+`

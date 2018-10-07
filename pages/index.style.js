@@ -5,6 +5,6 @@ export const Wrapper = styled.div`
 `
 
 export const ProjectsWrapper = styled.div`
-  padding: 0 24px;
-  margin: 70px 0;
+  padding: 0;
+  margin: 260px 70px;
 `

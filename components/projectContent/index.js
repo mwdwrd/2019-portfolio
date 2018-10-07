@@ -7,6 +7,7 @@ import * as Style from './style.js'
 import Image from './components/Image/index'
 import Video from './components/Video/index'
 import Audio from './components/Audio/index'
+import Text from './components/Text/index'
 import Grid from './components/Grid/index'
 import Section from './components/Section/index'
 
@@ -24,14 +25,16 @@ class ProjectContent extends React.Component {
       return contentItems = data.sort((a, b) => a.position > b.position).map((content, index) => {
         const type = content.type
 
-        if(type == 'image' || type == 'video' || type == 'audio' || type == 'grid' || type == 'section') {
+        if(type == 'image' || type == 'video' || type == 'text' || type == 'audio' || type == 'grid' || type == 'section' || type == 'spacer') {
           return (
             <Style.ContentItem key={index} data-aos="fade-up">
               {type === 'image' && <Image data={content} />}
               {type === 'video' && <Video data={content} />}
+              {type === 'text' && <Text data={content} />}
               {type === 'grid' && <Grid data={content.content} />}
               {type === 'audio' && <Audio data={content} />}
               {type === 'section' && <Section data={content} />}
+              {type === 'spacer' && <Style.Spacer />}
             </Style.ContentItem>
           )
         } else {

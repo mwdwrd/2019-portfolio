@@ -4,8 +4,8 @@ function generateTheme(props) {
   const pageTheme = props.theme
 
   return `
-    background-color: ${(pageTheme.backgroundColor) ? pageTheme.backgroundColor : '#000000'};
-    color: ${(pageTheme.textColor) ? pageTheme.textColor : '#ffffff'};
+    background-color: ${(pageTheme.backgroundColor) ? pageTheme.backgroundColor : '#ffffff'};
+    color: ${(pageTheme.textColor) ? pageTheme.textColor : '#000000'};
   `
 }
 
@@ -27,4 +27,10 @@ export const Body = styled.div`
   }
 `
 
-export const Header = styled.div``
+export const Header = styled.div`
+  // position: fixed;
+  // top: 0;
+  // left: 0;
+  // right: 0;
+  z-index: 5000;
+`

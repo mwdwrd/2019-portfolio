@@ -23,26 +23,19 @@ const theme = {
   },
   typography: {
     heading: {
-      fontFamily: 'Heebo, sans-serif',
+      fontFamily: 'Akkurat, sans-serif',
       fontWeight: 300
     },
     body: {
-      fontFamily: 'GT Pressura Mono, monospace',
+      fontFamily: 'Akkurat, sans-serif',
       fontWeight: 200
     },
     utility: {
-      fontFamily: 'GT Pressura Mono, monospace',
+      fontFamily: 'Akkurat, sans-serif',
       fontWeight: 200
     },
-    airdrop: {
-      fontFamily: 'Heebo, sans-serif',
-      fontWeight: 300,
-      fontSize: '20px',
-      lineHeight: '20px',
-      marginBottom: '12px'
-    },
     button: {
-      fontFamily: 'Heebo, sans-serif',
+      fontFamily: 'Akkurat, sans-serif',
       fontWeight: 500
     }
   },
