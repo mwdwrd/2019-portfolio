@@ -1,60 +1,27 @@
 const theme = {
-  breakpoints: {
-    xs: 0,
-    sm: 320,
-    md: 640,
-    lg: 1100,
-    xl: 1250
-  },
   colors: {
-    white: '#FFFFFF',
-    silverChalice: '#AAAAAA',
-    mirage: '#161823',
-    violetRed: 'rgba(251, 36, 97, 100)',
-    ebonyClay: '#212433',
-    tundora: '#444444'
+    primary: '#162C83',
+    text: '#222222'
   },
   layout: {
-    sidebarWidth: '25%',
     spacer: 8,
     blockSpacer: 16,
-    menuPadding: 40,
-    maxWidth: '900px'
+    menuPadding: 40
   },
   typography: {
+    body: {
+      fontFamily: 'Berthold Akzidenz Grotesk BE, sans-serif',
+      fontWeight: 400
+    },
+    caption: {
+      fontFamily: 'Berthold Akzidenz Grotesk BE, sans-serif',
+      fontWeight: 500,
+      fontSize: '12px',
+      letterSpacing: '0.1px'
+    },
     heading: {
       fontFamily: 'Akkurat, sans-serif',
       fontWeight: 300
-    },
-    body: {
-      fontFamily: 'Akkurat, sans-serif',
-      fontWeight: 200
-    },
-    utility: {
-      fontFamily: 'Akkurat, sans-serif',
-      fontWeight: 200
-    },
-    button: {
-      fontFamily: 'Akkurat, sans-serif',
-      fontWeight: 500
-    }
-  },
-  headings: {
-    h1: {
-      size: '50px',
-      lineHeight: '72px'
-    },
-    h2: {
-      size: '36px',
-      lineHeight: '50px'
-    },
-    h3: {
-      size: '24px',
-      lineHeight: '36px'
-    },
-    h4: {
-      size: '18px',
-      lineHeight: '26px'
     }
   }
 };

@@ -26,11 +26,10 @@ export const Body = styled.div`
     width: 100%;
   }
 `
-
 export const Header = styled.div`
-  // position: fixed;
-  // top: 0;
-  // left: 0;
-  // right: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 5000;
 `

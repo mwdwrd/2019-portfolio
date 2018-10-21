@@ -57,14 +57,6 @@ export const Image = styled.img`
   display: block;
 `
 
-// Layouts
-export const Header = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 5000;
-`
-
 // Introduction
 export const Intro = styled.div`
   position: relative;

@@ -3,8 +3,14 @@ import styled from 'styled-components'
 export const Wrapper = styled.div`
   position: relative;
 `
-
-export const ProjectsWrapper = styled.div`
-  padding: 0;
-  margin: 260px 70px;
+export const CoverImage = styled.div`
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  right: 100px;
+  bottom: 100px;
+  background-image: url('${props => props.image}');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 `

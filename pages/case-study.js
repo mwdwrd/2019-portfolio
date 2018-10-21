@@ -1,16 +1,20 @@
 import React from 'react'
 import * as Style from './case-study.style.js'
 import { Container, Row, Col } from 'react-grid-system'
-import Mark from '../components/mark/index'
+import Layout from '../components/layout/index'
 
 export default class CaseStudy extends React.Component {
-  render() {
-    return (
-      <div>
 
-        <Style.Header>
-          <Mark />
-        </Style.Header>
+
+  render() {
+    const meta = {
+      title: `Case Study`,
+      description: ``,
+      keywords: ``
+    }
+
+    return (
+      <Layout meta={meta}>
 
         <Style.Block>
           <Style.TopBlock>
@@ -151,7 +155,7 @@ export default class CaseStudy extends React.Component {
           </Style.Content>
         </Style.Block>
 
-      </div>
+      </Layout>
     )
   }
 }

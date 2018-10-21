@@ -1,5 +1,6 @@
-import Document, { Head, Main, NextScript } from 'next/document';
-import { ServerStyleSheet } from 'styled-components';
+import Document, { Head, Main, NextScript } from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
+import Typekit from 'react-typekit'
 
 export default class AircatchDocument extends Document {
   static async getInitialProps ({ renderPage }) {
@@ -20,6 +21,8 @@ export default class AircatchDocument extends Document {
           <meta name="language" content="EN" />
           <meta name="copyright" content="© 2018 Matthew Woodward" />
           <meta name="robots" content="All" />
+          <link rel="shortcut icon" href="/static/icons/favicon.ico" id="favicon-ico" />
+          <Typekit kitId="vmx1okz" />
           <link rel="stylesheet" href="/_next/static/style.css" />
           {this.props.styleTags}
         </Head>
