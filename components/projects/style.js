@@ -10,9 +10,9 @@ export const Projects = styled.ul`
   margin: 0;
   padding: 0;
   width: 100%;
-    display: grid;
-    grid-gap: 35px;
-    grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
+  display: grid;
+  grid-gap: 35px;
+  grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
 `
 
 export const ProjectWrapper = styled.li`

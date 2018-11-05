@@ -41,12 +41,14 @@ export const Body = styled.div``
 export const Date = styled.div`
   font-size: 13px;
   text-align: left;
-  font-family: 'Akkurat-Bold';
+  font-family: 'Akkurat', Arial, Helvetica, sans-serif;
+  font-weight: 600;
 `
 
 export const Title = styled.h2`
   flex: 1;
-  font-family: 'Akkurat';
+  font-family: 'Akkurat', Arial, Helvetica, sans-serif;
+  font-weight: 300;
   font-size: 32px;
   text-align: right;
 

@@ -1,12 +1,6 @@
 import React from 'react'
-
-// Data & Styling
 import * as Style from './style.js'
-
-// Required Components
-import Image from '../Image/index'
-import Video from '../Video/index'
-import Audio from '../Audio/index'
+import { Image, Video, Audio } from '../../components'
 
 class Grid extends React.Component {
   renderGridContents() {

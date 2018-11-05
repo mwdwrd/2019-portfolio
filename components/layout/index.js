@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import { locale } from '../../util/locale'
-import Header from '../header/index.js'
+import Navigation from '../navigation/index'
 import * as Style from './style.js'
 
 export default ({ children, meta, theme, query }) => (
@@ -14,9 +14,7 @@ export default ({ children, meta, theme, query }) => (
       <meta name="keywords" content={(meta.keywords) ? meta.keywords : locale.en.meta.keywords} />
     </Head>
 
-    <Style.Header>
-      <Header />
-    </Style.Header>
+    <Navigation />
 
     <Style.Body>
     	{ children }

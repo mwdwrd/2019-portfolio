@@ -1,15 +1,6 @@
 import React from 'react'
-
-// Data & Styling
+import { Image, Video, Audio, Text, Grid, Section } from './components'
 import * as Style from './style.js'
-
-// Required Components
-import Image from './components/Image/index'
-import Video from './components/Video/index'
-import Audio from './components/Audio/index'
-import Text from './components/Text/index'
-import Grid from './components/Grid/index'
-import Section from './components/Section/index'
 
 // Component
 class ProjectContent extends React.Component {

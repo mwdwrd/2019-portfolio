@@ -3,7 +3,13 @@ import * as Style from './other.style.js'
 import Layout from '../components/layout/index'
 import Image from '../components/image/index'
 import Video from '../components/video/index'
+import WYSIWYG from '../components/wysiwyg/index'
 import { Container, Row, Col } from 'react-grid-system'
+
+import roula_1_fullsize from '../static/images/fullsize/roula1.png'
+import roula_1_thumbnail from '../static/images/small/roula1.jpg'
+import cura_1_fullsize from '../static/images/fullsize/CURA.png'
+import cura_1_thumbnail from '../static/images/small/CURA.jpg'
 
 export default class Other extends React.Component {
   render() {
@@ -20,12 +26,27 @@ export default class Other extends React.Component {
           <Style.Post data-aos="fade-up">
             <Container>
               <Row>
+                <Col xs={12} md={6}>
+                  <WYSIWYG data-aos="fade-right">
+                    <p><b>"Other"</b> – A dedication to the things I'm working on, have thought about or never ended up finishing.</p>
+                  </WYSIWYG>
+                </Col>
+              </Row>
+            </Container>
+          </Style.Post>
+
+          <Style.Post data-aos="fade-up">
+            <Container>
+              <Row>
                 <Col md={9}>
-                  <Image data={{
-                    src: 'roula1.png',
-                    cap: 'An exploration for the Roula Cycling rebrand — inspired by forward-motion and a continious wave.',
-                    capAlign: 'right'
-                  }} />
+                  <Image
+                    srcPreload={roula_1_thumbnail}
+                    srcLoaded={roula_1_fullsize}
+                    ratio={'6:4'}
+                    caption={{
+                      text: 'An exploration for the Roula Cycling rebrand — inspired by forward-motion and a continious wave.',
+                      align: 'right'
+                    }} />
                 </Col>
               </Row>
             </Container>
@@ -67,11 +88,14 @@ export default class Other extends React.Component {
             <Container>
               <Row>
                 <Col md={8} offset={{ md: 3 }}>
-                  <Image data={{
-                    src: 'CURA.png',
-                    cap: 'ILA CURA Type Treatment — 07/18',
-                    capAlign: 'center'
-                  }} />
+                  <Image
+                    srcPreload={cura_1_thumbnail}
+                    srcLoaded={cura_1_fullsize}
+                    ratio={'5:4'}
+                    caption={{
+                      text: 'ILA CURA Type Treatment — 07/18',
+                      align: 'center'
+                    }} />
                 </Col>
               </Row>
             </Container>

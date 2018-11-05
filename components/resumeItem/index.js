@@ -8,7 +8,10 @@ export default class ResumeItem extends React.Component {
     return (
       <Style.Wrapper>
         {data.year && <Style.Year>{data.year}</Style.Year>}
-        {data.company && <Style.Company>{data.company}</Style.Company>}
+        {data.company &&
+          <Style.Company>
+            <a>{data.company}</a>
+          </Style.Company>}
         {data.position && <Style.Position>{data.position}</Style.Position>}
         {data.desc && <Style.Desc>{data.desc}</Style.Desc>}
       </Style.Wrapper>

@@ -32,8 +32,8 @@ export default class Video extends React.Component {
             <Player
               playsInline
               src={src}
-              autoPlay='true'
-              loop='true'
+              autoPlay={true}
+              loop={true}
               aspectRatio={ratio}
             >
               <ControlBar

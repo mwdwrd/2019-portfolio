@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import theme from '../../util/theme'
+import media from 'styled-media-query'
 
 function getAlignment(props) {
   if (props.align === 'left') {
@@ -14,21 +15,31 @@ function getAlignment(props) {
 
 export const Wrapper = styled.div`
   font-family: ${theme.typography.caption.fontFamily};
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 1.4;
+  font-weight: ${theme.typography.caption.fontWeight};
+  font-size: ${theme.typography.caption.fontSize};
+  line-height: ${theme.typography.caption.lineHeight};
   letter-spacing: ${theme.typography.caption.letterSpacing};
+  color: rgba(43, 51, 63, 0.7);
+
   display: flex;
   justify-content: ${getAlignment};
-  padding: 24px;
+  padding: 24px 0;
 
   &:hover {
     cursor: help;
   }
+
+  ${media.lessThan("medium")`
+    justify-content: flex-start;
+  `}
 `
 export const Text = styled.span`
   display: block;
-  max-width: 90%;
+  max-width: 80%;
+
+  ${media.lessThan("medium")`
+    max-width: 100%;
+  `}
 `
 
 // export const Wrapper = styled.div`

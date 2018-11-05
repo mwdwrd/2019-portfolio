@@ -3,17 +3,24 @@ import { Provider } from 'react-redux'
 import App, { Container } from 'next/app'
 import withRedux from 'next-redux-wrapper'
 import { initStore } from '../store'
+import { PageTransition } from 'next-page-transitions'
 import AOS from 'aos'
 import "../styles/styles.scss"
 
 export default withRedux(initStore)(class Aircatch extends App {
-  static async getInitialProps ({Component, ctx}) {
+  static async getInitialProps ({Component, router, ctx}) {
+    let pageProps = (Component.getInitialProps ? await Component.getInitialProps(ctx) : {})
+ 
+    if (Component.getInitialProps) {
+      pageProps = await Component.getInitialProps(ctx)
+    }
+
     return {
-      pageProps: (Component.getInitialProps ? await Component.getInitialProps(ctx) : {})
+      pageProps
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     AOS.init({
       duration: 600,
       once: true,
@@ -28,7 +35,9 @@ export default withRedux(initStore)(class Aircatch extends App {
     return (
       <Container>
         <Provider store={store}>
-          <Component {...pageProps} />
+          <PageTransition timeout={300} classNames="page-transition">
+            <Component key={this.props.router.route} {...pageProps} />
+          </PageTransition>
         </Provider>
       </Container>
     )

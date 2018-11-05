@@ -23,7 +23,6 @@ export default class AircatchDocument extends Document {
           <meta name="robots" content="All" />
           <link rel="shortcut icon" href="/static/icons/favicon.ico" id="favicon-ico" />
           <Typekit kitId="vmx1okz" />
-          <link rel="stylesheet" href="/_next/static/style.css" />
           {this.props.styleTags}
         </Head>
         <body>
@@ -34,7 +33,3 @@ export default class AircatchDocument extends Document {
     )
   }
 }
-
-
-
-

@@ -4,17 +4,34 @@ import theme from '../../util/theme'
 export const Wrapper = styled.div`
   font-family: ${theme.typography.body.fontFamily};
   font-weight: ${theme.typography.body.fontWeight};
+  font-size: ${theme.typography.body.fontSize};
+  line-height: ${theme.typography.body.lineHeight};
+  letter-spacing: ${theme.typography.body.letterSpacing};
+
   margin-bottom: 28px;
-  font-size: 20px;
-  line-height: 1.5;
-  letter-spacing: 0.1px;
   color: #222;
+
+  a {
+    position: relative;
+    text-decoration: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      height: 1px;
+      width: 0;
+      background: ${theme.colors.primary};
+      -webkit-transition: width .5s;
+      transition: width .5s;
+    }
+  }
 
   a:link,
   a:visited {
-    color: #222;
+    color: ${theme.colors.primary};
     text-decoration: none;
-    border-bottom: 1px solid;
   }
 
   a:active,
@@ -22,6 +39,10 @@ export const Wrapper = styled.div`
     cursor: alias;
     color: ${theme.colors.primary};
     text-decoration: none;
+
+    &:after {
+      width: 100%;
+    }
   }
 
   p {

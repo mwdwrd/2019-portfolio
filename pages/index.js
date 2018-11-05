@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import * as Style from './index.style.js';
-import Layout from '../components/layout/index';
+import * as Style from './index.style.js'
+import Layout from '../components/layout/index'
+import HoverGallery from '../components/hoverGallery/index'
 
 class Index extends React.Component {
 
@@ -14,7 +15,7 @@ class Index extends React.Component {
 
     return (
       <Layout meta={meta}>
-        <Style.CoverImage image={'/static/images/work.gif'}/>
+        <HoverGallery />
       </Layout>
     )
   }

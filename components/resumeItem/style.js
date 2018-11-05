@@ -1,38 +1,41 @@
 import styled from 'styled-components'
-
-const headlineFontFamilyBold = 'Akkurat-Bold'
-const bodyFontFamily = 'Akkurat'
+import theme from '../../util/theme'
 
 export const Wrapper = styled.li`
-  font-family: ${bodyFontFamily};
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: -0.29px;
-  margin: 0 0 30px 0;
+  margin: 0 0 40px 0;
+  
+  > span {
+    display: block;
+  }
 `
 export const Year = styled.span`
-  display: block;
-  font-family: ${headlineFontFamilyBold};
-  font-weight: 200;
+  font-family: 'Berthold', Arial, Helvetica, sans-serif;
+  font-weight: 500;
   font-size: 10px;
+  line-height: 1;
+  margin-bottom: 8px;
 `
 export const Company = styled.span`
-  display: block;
-  font-family: ${headlineFontFamilyBold};
+  font-family: 'Berthold', Arial, Helvetica, sans-serif;
   font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
 `
 export const Position = styled.span`
-  font-family: ${bodyFontFamily};
-  display: block;
+  font-family: 'Berthold', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.4;
 `
 export const Desc = styled.span`
-  font-family: ${bodyFontFamily};
-  display: block;
-  font-size: 13px;
-  line-height: 19px;
-  margin-top: 5px;
-  max-width: 90%;
-  color: #555;
+  font-family: ${theme.typography.caption.fontFamily};
+  font-weight: ${theme.typography.caption.fontWeight};
+  font-size: ${theme.typography.caption.fontSize};
+  line-height: ${theme.typography.caption.lineHeight};
+  letter-spacing: ${theme.typography.caption.letterSpacing};
+
+  margin-top: 3px;
+  color: rgba(43, 51, 63, 0.7);
 
   a {
     color: inherit;
