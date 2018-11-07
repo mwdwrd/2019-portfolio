@@ -5,6 +5,7 @@ routes
 .add('biography', '/biography', 'biography')
 .add('case-study', '/case-study', 'case-study')
 .add('other', '/other', 'other')
+.add('other-pagination', '/other/page/:page', 'other')
 
 //.add('project', '/:uid', 'project')
 // .add('prints', '/prints', 'prints')

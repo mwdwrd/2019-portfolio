@@ -16,13 +16,13 @@ class Navigation extends React.Component {
 
   onNavShow = (navOpen) => {
     if(navOpen) {
-      console.log('Nav Shown')
+      // console.log('Nav Shown')
     }
   }
 
   onNavHide = (navOpen) => {
     if(!navOpen) {
-      console.log('Nav Hidden')
+      // console.log('Nav Hidden')
     }
   }
 

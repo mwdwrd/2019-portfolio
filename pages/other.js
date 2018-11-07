@@ -1,124 +1,66 @@
 import React from 'react'
 import * as Style from './other.style.js'
 import Layout from '../components/layout/index'
-import Image from '../components/image/index'
-import Video from '../components/video/index'
+import { getWorkAPI } from '../util/api'
+import { linkResolver } from '../util/helper'
+import Link from 'next/link'
 import WYSIWYG from '../components/wysiwyg/index'
 import { Container, Row, Col } from 'react-grid-system'
 
-import roula_1_fullsize from '../static/images/fullsize/roula1.png'
-import roula_1_thumbnail from '../static/images/small/roula1.jpg'
-import cura_1_fullsize from '../static/images/fullsize/CURA.png'
-import cura_1_thumbnail from '../static/images/small/CURA.jpg'
-
-export default class Other extends React.Component {
-  render() {
-    const meta = {
+const Other = (
+  {
+    posts = [],
+    meta = {
       title: `Other`,
       description: ``,
       keywords: ``
     }
+  }) => (
+    <Layout meta={meta}>
+      <Style.Wrapper>
 
-    return (
-      <Layout meta={meta}>
-        <Style.Wrapper>
+        <Style.Post data-aos="fade-up">
+          <Container>
+            <Row>
+              <Col xs={12} md={6}>
+                <WYSIWYG data-aos="fade-right">
+                  <p><b>"Other"</b> – A dedication to the things I'm working on, have thought about or never ended up finishing.</p>
+                </WYSIWYG>
+              </Col>
+            </Row>
+          </Container>
+        </Style.Post>
 
-          <Style.Post data-aos="fade-up">
+        {posts.map((post, index) => (
+          <Style.Post key={index} data-aos="fade-up">
             <Container>
               <Row>
-                <Col xs={12} md={6}>
-                  <WYSIWYG data-aos="fade-right">
-                    <p><b>"Other"</b> – A dedication to the things I'm working on, have thought about or never ended up finishing.</p>
-                  </WYSIWYG>
+
+                <Col md={12}>
+                  <Link as={linkResolver(post)} href={`/work?slug=${post.uid}`} passHref>
+                    {post.data.caption[0].text}
+                  </Link>
                 </Col>
+
               </Row>
             </Container>
           </Style.Post>
+        ))}
+    
+      </Style.Wrapper>
+    </Layout>
+);
 
-          <Style.Post data-aos="fade-up">
-            <Container>
-              <Row>
-                <Col md={9}>
-                  <Image
-                    srcPreload={roula_1_thumbnail}
-                    srcLoaded={roula_1_fullsize}
-                    ratio={'6:4'}
-                    caption={{
-                      text: 'An exploration for the Roula Cycling rebrand — inspired by forward-motion and a continious wave.',
-                      align: 'right'
-                    }} />
-                </Col>
-              </Row>
-            </Container>
-          </Style.Post>
+Other.getInitialProps = async ({ query }) => {
+  const page = (query.page) ? query.page : 1
+  const response = await getWorkAPI({
+    page
+  })
 
-          <Style.Post data-aos="fade-up">
-            <Container>
-              <Row>
-                <Col md={6} offset={{ md: 5 }}>
-                  <Video data={{
-                    src: 'md_film_SQ_02.mp4',
-                    type: 'hosted',
-                    ratio: '1:1',
-                    cap: 'Materiality experiments from the Research and Development phase of Master & Dynamics MW07 True Wireless Campaign.',
-                    capAlign: 'left'
-                  }} />
-                </Col>
-              </Row>
-            </Container>
-          </Style.Post>
-
-          <Style.Post data-aos="fade-up">
-            <Container>
-              <Row>
-                <Col>
-                  <Video data={{
-                    id: '290824916',
-                    type: 'vimeo',
-                    ratio: '2.35:1',
-                    cap: 'Dean & DeLuca: Performance titled "From Great to Greatness" — Directed by Lincoln Caplice.',
-                    capAlign: 'left'
-                  }} />
-                </Col>
-              </Row>
-            </Container>
-          </Style.Post>
-
-          <Style.Post data-aos="fade-up">
-            <Container>
-              <Row>
-                <Col md={8} offset={{ md: 3 }}>
-                  <Image
-                    srcPreload={cura_1_thumbnail}
-                    srcLoaded={cura_1_fullsize}
-                    ratio={'5:4'}
-                    caption={{
-                      text: 'ILA CURA Type Treatment — 07/18',
-                      align: 'center'
-                    }} />
-                </Col>
-              </Row>
-            </Container>
-          </Style.Post>
-
-          <Style.Post data-aos="fade-up">
-            <Container>
-              <Row>
-                <Col md={6} offset={{ md: 1 }}>
-                  <Video data={{
-                    src: 'md_film_SQ_01.mp4',
-                    type: 'hosted',
-                    ratio: '1:1',
-                    cap: 'Materiality experiments from the Research and Development phase of Master & Dynamics MW07 True Wireless Campaign.',
-                    capAlign: 'left'
-                  }} />
-                </Col>
-              </Row>
-            </Container>
-          </Style.Post>
-
-        </Style.Wrapper>
-      </Layout>
-    )
+  return {
+    posts: response.results,
+    currentPage: page
   }
 }
+
+export default Other
