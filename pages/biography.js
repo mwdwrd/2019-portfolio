@@ -41,15 +41,17 @@ export default class Biography extends React.Component {
             <Row>
               <Col xs={12} md={8}>
                 <Style.Bio>
-                  <WYSIWYG data-aos="fade-right">
-                    { RichText.render(body, linkResolver) }
+                  <WYSIWYG>
+                    <div data-aos="fade-up">
+                      { RichText.render(body, linkResolver) }
+                    </div>
                   </WYSIWYG>
                 </Style.Bio>
               </Col>
               <Col xs={12} md={4} lg={3} offset={{ lg: 1 }}>
 
                 <Hidden xs>
-                  <Style.ProfileCard>
+                  <Style.ProfileCard data-aos="fade-up">
 
                     {portrait &&
                       <Style.ProfileImage>
@@ -88,8 +90,6 @@ export default class Biography extends React.Component {
                     {resume.map((resumeItem, index) => (
                       <ResumeItem
                         key={index}
-                        data-aos="fade-up"
-                        data-aos-delay={200*index}
                         data={{
                           year: resumeItem.year,
                           company: resumeItem.company[0].text,

@@ -6,7 +6,7 @@ export default class ResumeItem extends React.Component {
     const { data } = this.props
 
     return (
-      <Style.Wrapper>
+      <Style.Wrapper data-aos="fade-up">
         {data.year && <Style.Year>{data.year}</Style.Year>}
         {data.company &&
           <Style.Company>

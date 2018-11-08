@@ -10,7 +10,7 @@ export default class pageHeader extends React.Component {
     const { content } = this.props
 
     return (
-      <Style.Wrapper>
+      <Style.Wrapper data-aos="fade-up">
         <GridWrapper columnSpan={6} columnOffset={0}>
           <WYSIWYG data-aos="fade-right">
             { RichText.render(content, linkResolver) }

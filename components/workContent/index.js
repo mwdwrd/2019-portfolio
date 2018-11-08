@@ -17,15 +17,15 @@ export default class WorkContent extends React.Component {
         // console.log(content)
         if(type == 'image' || type == 'vimeo' || type == 'hosted_video') {
           return (
-            <Style.ContentItem key={index}>
+            <Style.ContentItem key={index} data-aos="fade-up">
 
               {type === 'image' &&
                 <div>
                   <Image
                     alt={''}
                     srcPreload={content.primary.singleimage.thumbnail.url}
-                    srcLoaded={content.primary.singleimage.url}
-                    ratio={'16:9'}
+                    srcLoaded={content.primary.singleimage.large.url}
+                    ratio={getImageRatio(content.primary.singleimage.dimensions.width, content.primary.singleimage.dimensions.height)}
                   />
                   {content.primary.caption &&
                     <Caption caption={content.primary.caption} />

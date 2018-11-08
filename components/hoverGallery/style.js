@@ -15,10 +15,6 @@ export const Item = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
-  background-image: url('${props => props.source}');
-  background-size: ${props => props.size};
-  background-repeat: no-repeat;
-  background-position: center center;
   background-color: ${(props => props.backgroundColor) ? props => props.backgroundColor : 'transparent'};
   display: none;
 `

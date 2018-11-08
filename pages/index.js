@@ -1,21 +1,32 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import * as Style from './index.style.js'
+import { getHomeAPI } from '../util/api'
 import Layout from '../components/layout/index'
 import HoverGallery from '../components/hoverGallery/index'
 
 class Index extends React.Component {
+  static async getInitialProps() {
+    const response = await getHomeAPI()
+
+    return {
+      pageData: response.results[0]
+    }
+  }
 
   render() {
-    const meta = {
-      title: ``,
-      description: ``,
-      keywords: ``
-    }
+    const {
+      pageData = [],
+      meta = {
+        title: ``,
+        description: ``,
+        keywords: ``
+      }
+    } = this.props
 
     return (
       <Layout meta={meta}>
-        <HoverGallery />
+        <HoverGallery assets={pageData.data.body} />
       </Layout>
     )
   }
