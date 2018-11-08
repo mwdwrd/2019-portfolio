@@ -53,6 +53,11 @@ export const Wrapper = styled.div`
     }
   }
 
+  b, strong {
+    font-family: ${theme.typography.body.fontFamily};
+    font-weight: 500;
+  }
+
   h2 {
     font-family: 'AkzidenzGroteskBE-LightEx';
     font-size: 44px;

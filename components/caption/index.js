@@ -1,16 +1,17 @@
 import React from 'react'
 import * as Style from './style.js'
+import { RichText } from 'prismic-reactjs'
+import { linkResolver } from '../../util/helper'
 
 export default class Caption extends React.Component {
   render() {
-    const { data } = this.props
-
-    const caption = data.caption
-    const align = (data.align) ? data.align : 'left'
+    const { caption } = this.props
 
     return (
-      <Style.Wrapper align={align} data-aos="fade-in">
-        <Style.Text>{caption}</Style.Text>
+      <Style.Wrapper align={'left'} data-aos="fade-in">
+        <Style.Text>
+          { RichText.render(caption, linkResolver) }
+        </Style.Text>
       </Style.Wrapper>
     )
   }

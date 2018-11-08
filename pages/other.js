@@ -1,66 +1,53 @@
 import React from 'react'
 import * as Style from './other.style.js'
 import Layout from '../components/layout/index'
-import { getWorkAPI } from '../util/api'
-import { linkResolver } from '../util/helper'
-import Link from 'next/link'
-import WYSIWYG from '../components/wysiwyg/index'
-import { Container, Row, Col } from 'react-grid-system'
+import { getWorkAPI, getOtherAPI } from '../util/api'
+import WorkContent from '../components/workContent/index'
+import GridWrapper from '../components/gridWrapper/index'
+import PageHeader from '../components/pageHeader/index'
 
-const Other = (
-  {
-    posts = [],
-    meta = {
-      title: `Other`,
-      description: ``,
-      keywords: ``
+export default class Other extends React.Component {
+
+  static async getInitialProps({ query }) {
+    const page = (query.page) ? query.page : 1
+    const pageResults = await getOtherAPI()
+    const workResults = await getWorkAPI({
+      orderings: '[document.first_publication_date desc]' ,
+      page
+    })
+
+    return {
+      workData: workResults.results,
+      pageData: pageResults.results[0],
+      currentPage: page
     }
-  }) => (
-    <Layout meta={meta}>
-      <Style.Wrapper>
+  }
 
-        <Style.Post data-aos="fade-up">
-          <Container>
-            <Row>
-              <Col xs={12} md={6}>
-                <WYSIWYG data-aos="fade-right">
-                  <p><b>"Other"</b> – A dedication to the things I'm working on, have thought about or never ended up finishing.</p>
-                </WYSIWYG>
-              </Col>
-            </Row>
-          </Container>
-        </Style.Post>
+  render() {
+    const {
+      workData = [],
+      pageData = [],
+      meta = {
+        title: `Other`,
+        description: ``,
+        keywords: ``
+      }
+    } = this.props
 
-        {posts.map((post, index) => (
-          <Style.Post key={index} data-aos="fade-up">
-            <Container>
-              <Row>
-
-                <Col md={12}>
-                  <Link as={linkResolver(post)} href={`/work?slug=${post.uid}`} passHref>
-                    {post.data.caption[0].text}
-                  </Link>
-                </Col>
-
-              </Row>
-            </Container>
-          </Style.Post>
-        ))}
-    
-      </Style.Wrapper>
-    </Layout>
-);
-
-Other.getInitialProps = async ({ query }) => {
-  const page = (query.page) ? query.page : 1
-  const response = await getWorkAPI({
-    page
-  })
-
-  return {
-    posts: response.results,
-    currentPage: page
+    return (
+      <Layout meta={meta}>
+        <Style.Wrapper>
+          <PageHeader content={pageData.data.body} />
+          {workData.map((post, index) => (
+            <GridWrapper
+              key={index}
+              columnSpan={parseInt(post.data.columnspan)}
+              columnOffset={parseInt(post.data.columnoffset)}>
+              <WorkContent data={post.data.body} />
+            </GridWrapper>
+            ))}
+        </Style.Wrapper>
+      </Layout>
+    )
   }
 }
-
-export default Other

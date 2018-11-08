@@ -33,4 +33,18 @@ const getBioAPI = async params => {
   }
 }
 
-export { getWorkAPI, getBioAPI }
+const getOtherAPI = async params => {
+  try {
+    const API = await Prismic.api(PRISMIC_API_URL)
+    const response = await API.query(
+      Prismic.Predicates.at('document.type', 'other'),
+      { ...params }
+    )
+
+    return response
+  } catch (error) {
+    return error
+  }
+}
+
+export { getWorkAPI, getBioAPI, getOtherAPI }
