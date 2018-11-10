@@ -5,7 +5,7 @@
     "dev": "node server.js",
     "build": "next build",
     "start": "NODE_ENV=production node server",
-    "deploy": "now && now alias && now rm my-app --safe --yes"
+    "deploy": "now && now alias && now rm mwdwrd.com --safe --yes"
   },
   "dependencies": {
     "@zeit/next-sass": "1.0.1",
@@ -38,6 +38,7 @@
     "react-dom": "^16.3.2",
     "react-ga": "2.5.3",
     "react-grid-system": "4.3.1",
+    "react-infinite-scroller": "1.2.2",
     "react-prismic": "^0.6.1",
     "react-redux": "5.0.7",
     "react-soundplayer": "1.0.4",

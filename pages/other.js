@@ -5,6 +5,7 @@ import { getWorkAPI, getOtherAPI } from '../util/api'
 import WorkContent from '../components/workContent/index'
 import GridWrapper from '../components/gridWrapper/index'
 import PageHeader from '../components/pageHeader/index'
+// import InfiniteScroll from 'react-infinite-scroller'
 
 export default class Other extends React.Component {
 
