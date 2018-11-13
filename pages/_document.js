@@ -22,6 +22,8 @@ export default class AircatchDocument extends Document {
           <meta name="copyright" content="© 2018 Matthew Woodward" />
           <meta name="robots" content="All" />
           <link rel="shortcut icon" href="/static/icons/favicon.ico" id="favicon-ico" />
+          <link rel="stylesheet" type="text/css" charSet="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css" />
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css" />
           <Typekit kitId="vmx1okz" />
           {this.props.styleTags}
         </Head>

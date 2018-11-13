@@ -25,17 +25,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: none;
 	font-weight: 100;
-	cursor: url("/static/cursor/cursorDefault.png") 0 0, auto; /* Legacy */
-  cursor: url("/static/cursor/cursorDefault.svg") 0 0, auto; /* FF */
-	cursor: -webkit-image-set(url("/static/cursor/cursorDefault.png") 1x, url("/static/cursor/cursorDefault@2x.png") 2x) 0 0, auto; /* Webkit */
+	// cursor: url("/static/cursor/cursorDefault.png") 0 0, auto; /* Legacy */
+  // cursor: url("/static/cursor/cursorDefault.svg") 0 0, auto; /* FF */
+	// cursor: -webkit-image-set(url("/static/cursor/cursorDefault.png") 1x, url("/static/cursor/cursorDefault@2x.png") 2x) 0 0, auto; /* Webkit */
 	
-	a {
-		cursor: url("/static/cursor/cursorPointer.png") 0 0, pointer; /* Legacy */
-  	cursor: url("/static/cursor/cursorPointer.svg") 0 0, pointer; /* FF */
-  	cursor: -webkit-image-set(url("/static/cursor/cursorPointer.png") 1x, url("/static/cursor/cursorPointer@2x.png") 2x) 0 0, pointer; /* Webkit */
-	}
+	// a {
+	// 	cursor: url("/static/cursor/cursorPointer.png") 0 0, pointer; /* Legacy */
+  // 	cursor: url("/static/cursor/cursorPointer.svg") 0 0, pointer; /* FF */
+  // 	cursor: -webkit-image-set(url("/static/cursor/cursorPointer.png") 1x, url("/static/cursor/cursorPointer@2x.png") 2x) 0 0, pointer; /* Webkit */
+	// }
 
-	b {
+	b, strong {
 		font-family: 'Berthold', Arial, Helvetica, sans-serif;
 		font-weight: 500;
 	}

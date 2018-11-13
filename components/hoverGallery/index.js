@@ -1,7 +1,8 @@
 import React from 'react'
 import * as Style from './style.js'
 import ReactCursorPosition, { INTERACTIONS } from 'react-cursor-position'
-import HoverGalleryWrapper from './components/hoverGalleryWrapper/index'
+//import HoverGalleryWrapper from './components/hoverGalleryWrapper/index'
+import CarouselWrapper from './components/carouselWrapper/index'
 import Image from './components/image/index'
 import Video from './components/video/index'
 
@@ -23,7 +24,7 @@ export default class HoverGallery extends React.Component {
               {type === 'image' &&
                 <Image
                   src={content.primary.image.url}
-                  size={content.primary.size}
+                  size={'contain'}
                   backgroundColor={content.primary.background_color}
                 />
               }
@@ -45,10 +46,12 @@ export default class HoverGallery extends React.Component {
 
     return (
       <Style.Wrapper>
-        <ReactCursorPosition activationInteractionMouse={INTERACTIONS.HOVER}>
-          <HoverGalleryWrapper>
+        <ReactCursorPosition 
+          shouldStopTouchMovePropagation={true}
+          activationInteractionMouse={INTERACTIONS.HOVER}>
+          <CarouselWrapper>
             {Items}
-          </HoverGalleryWrapper>
+          </CarouselWrapper>
         </ReactCursorPosition>
       </Style.Wrapper>
     )

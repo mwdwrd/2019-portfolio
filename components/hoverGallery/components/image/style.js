@@ -7,6 +7,7 @@ export const Wrapper = styled.div`
   top: 0;
   right: 0;
   bottom: 0;
+  margin: 100px;
   background-image: url('${props => props.src}');
   background-size: ${props => props.size};
   background-repeat: no-repeat;
@@ -14,6 +15,7 @@ export const Wrapper = styled.div`
   background-color: ${(props => props.backgroundColor) ? props => props.backgroundColor : 'transparent'};
 
   ${media.lessThan("medium")`
-    background-size: ${props => props.size === 'cover' ? props => props.size : 'contain'};
+    background-size: 'contain';
+    margin: 0;
   `}
 `
