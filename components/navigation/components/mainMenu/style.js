@@ -14,11 +14,14 @@ export const NavLink = styled.a`
   font-size: ${theme.typography.mainMenu.fontSize};
   line-height: ${theme.typography.mainMenu.lineHeight};
   letter-spacing: ${theme.typography.mainMenu.letterSpacing};
-
+  cursor: pointer;
   margin-left: 24px;
   color: black;
+  transition: color 300ms ease;
 
-  &.active {
+  &.active,
+  &:hover,
+  &:active {
     color: #162C83;
   }
 `

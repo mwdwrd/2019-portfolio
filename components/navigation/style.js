@@ -16,6 +16,13 @@ export const Drawer = styled.div`
 export const Mark = styled.div`
   padding: ${theme.layout.menuPadding}px;
   padding-right: 0;
+
+  &:hover {
+    polygon {
+      transition: color 300ms ease;
+      fill: #162C83;
+    }
+  }
 `
 export const MainMenu = styled.div`
   flex: 1;
