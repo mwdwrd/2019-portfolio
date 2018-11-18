@@ -31,13 +31,15 @@ export const ProfileName = styled.div`
   font-size: 14px;
   line-height: 1.4;
 `
-export const ProfileDetails = styled.div`
+export const ProfileDetails = styled.ul`
   font-family: ${theme.typography.caption.fontFamily};
   font-weight: ${theme.typography.caption.fontWeight};
   font-size: ${theme.typography.caption.fontSize};
   line-height: ${theme.typography.caption.lineHeight};
   letter-spacing: ${theme.typography.caption.letterSpacing};
   color: rgba(43, 51, 63, 0.7);
+  margin: 0;
+  padding: 0;
 
   a {
     position: relative;
@@ -72,6 +74,9 @@ export const ProfileDetails = styled.div`
       width: 100%;
     }
   }
+`
+export const ProfileLink = styled.li`
+  list-style: none;
 `
 export const Resume = styled.ul`
   list-style: none;

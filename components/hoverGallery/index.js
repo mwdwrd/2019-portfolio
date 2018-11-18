@@ -1,63 +1,57 @@
 import React from 'react'
 import * as Style from './style.js'
 import ReactCursorPosition, { INTERACTIONS } from 'react-cursor-position'
-import HoverGalleryWrapper from './components/hoverGalleryWrapper/index'
+//import HoverGalleryWrapper from './components/hoverGalleryWrapper/index'
+import CarouselWrapper from './components/carouselWrapper/index'
+import Image from './components/image/index'
+import Video from './components/video/index'
 
 export default class HoverGallery extends React.Component {
+
+  renderItems() {
+    const { assets } = this.props
+
+    if (assets) {
+      const contentItems = assets.map((content, index) => {
+        const type = content.slice_type
+
+        if(type == 'image') {
+          return (
+            <Style.Item
+              key={index}
+              className='item'
+              backgroundColor={content.primary.background_color}>
+              {type === 'image' &&
+                <Image
+                  src={content.primary.image.url}
+                  size={'contain'}
+                  backgroundColor={content.primary.background_color}
+                />
+              }
+            </Style.Item>
+          )
+        } else {
+          return `Content type "${type}" not found.`
+        }
+      })
+
+      return contentItems
+    }
+
+    return 'No contents found.'
+  }
+
   render() {
+    const Items = this.renderItems()
+
     return (
       <Style.Wrapper>
-        <ReactCursorPosition activationInteractionMouse={INTERACTIONS.HOVER}>
-          <HoverGalleryWrapper>
-            <Style.Item
-              className='item'
-              source={'/static/images/fullsize/MD_Ear_MatteBlack.jpg'}
-              size={'50%'}
-              backgroundColor={'#f2f2f2'}
-            />
-            <Style.Item
-              className='item'
-              source={'/static/images/fullsize/MD_TortoiseShell_002.jpg'}
-              size={'cover'}
-              backgroundColor={'#f2f2f2'}
-            />
-            <Style.Item
-              className='item'
-              source={'/static/images/fullsize/kob_thumbnail.png'}
-              size={'50%'}
-              backgroundColor={'#ffffff'}
-            />
-            <Style.Item
-              className='item'
-              source={'/static/images/fullsize/roula_thumbnail.png'}
-              size={'50%'}
-              backgroundColor={'#ed3a25'}
-            />
-            <Style.Item
-              className='item'
-              source={'/static/images/fullsize/HC_001.png'}
-              size={'cover'}
-              backgroundColor={'#14259b'}
-            />
-            <Style.Item
-              className='item'
-              source={'/static/images/fullsize/GBC_004.png'}
-              size={'50%'}
-              backgroundColor={'#f19a17'}
-            />
-            <Style.Item
-              className='item'
-              source={'/static/images/fullsize/GBC_005.png'}
-              size={'cover'}
-              backgroundColor={'#ffffff'}
-            />
-            <Style.Item
-              className='item'
-              source={'/static/images/fullsize/VV_002.png'}
-              size={'80%'}
-              backgroundColor={'#ffffff'}
-            />
-          </HoverGalleryWrapper>
+        <ReactCursorPosition 
+          shouldStopTouchMovePropagation={true}
+          activationInteractionMouse={INTERACTIONS.HOVER}>
+          <CarouselWrapper>
+            {Items}
+          </CarouselWrapper>
         </ReactCursorPosition>
       </Style.Wrapper>
     )

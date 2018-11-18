@@ -29,13 +29,47 @@ export const Wrapper = styled.div`
     cursor: help;
   }
 
+  a {
+    position: relative;
+    text-decoration: none;
+
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      height: 1px;
+      width: 0;
+      background: ${theme.colors.primary};
+      -webkit-transition: width .5s;
+      transition: width .5s;
+    }
+  }
+
+  a:link,
+  a:visited {
+    color: ${theme.colors.primary};
+    text-decoration: none;
+  }
+
+  a:active,
+  a:hover {
+    cursor: alias;
+    color: ${theme.colors.primary};
+    text-decoration: none;
+
+    &:after {
+      width: 100%;
+    }
+  }
+
   ${media.lessThan("medium")`
     justify-content: flex-start;
   `}
 `
 export const Text = styled.span`
   display: block;
-  max-width: 80%;
+  max-width: 700px;
 
   ${media.lessThan("medium")`
     max-width: 100%;

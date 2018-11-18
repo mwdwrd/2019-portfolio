@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server"
+    "start": "NODE_ENV=production node server",
+    "deploy": "now && now alias && now rm mwdwrd.com --safe --yes"
   },
   "dependencies": {
     "@zeit/next-sass": "1.0.1",
@@ -26,7 +27,7 @@
     "next-redux-wrapper": "2.0.0",
     "next-routes": "1.4.2",
     "node-sass": "4.9.4",
-    "prismic-javascript": "1.5.0-beta.3",
+    "prismic-javascript": "1.5.0",
     "prismic-next": "^0.0.1",
     "prismic-reactjs": "0.3.1",
     "randomcolor": "^0.5.3",
@@ -35,14 +36,19 @@
     "react-cursor-position": "3.0.3",
     "react-device-detect": "1.6.1",
     "react-dom": "^16.3.2",
+    "react-ga": "2.5.3",
     "react-grid-system": "4.3.1",
+    "react-infinite-scroller": "1.2.2",
     "react-prismic": "^0.6.1",
     "react-redux": "5.0.7",
+    "react-slick": "0.23.2",
     "react-soundplayer": "1.0.4",
     "react-typekit": "1.1.3",
+    "react-video-cover": "1.2.0",
     "redux": "4.0.0",
     "redux-devtools-extension": "2.13.5",
     "redux-thunk": "2.2.0",
+    "slick-carousel": "1.8.1",
     "sort-array": "2.0.0",
     "sort-by": "1.2.0",
     "sort-object": "3.0.2",

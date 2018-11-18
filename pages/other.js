@@ -1,122 +1,52 @@
 import React from 'react'
 import * as Style from './other.style.js'
 import Layout from '../components/layout/index'
-import Image from '../components/image/index'
-import Video from '../components/video/index'
-import WYSIWYG from '../components/wysiwyg/index'
-import { Container, Row, Col } from 'react-grid-system'
-
-import roula_1_fullsize from '../static/images/fullsize/roula1.png'
-import roula_1_thumbnail from '../static/images/small/roula1.jpg'
-import cura_1_fullsize from '../static/images/fullsize/CURA.png'
-import cura_1_thumbnail from '../static/images/small/CURA.jpg'
+import { getWorkAPI, getOtherAPI } from '../util/api'
+import WorkContent from '../components/workContent/index'
+import GridWrapper from '../components/gridWrapper/index'
+import PageHeader from '../components/pageHeader/index'
+// import InfiniteScroll from 'react-infinite-scroller'
 
 export default class Other extends React.Component {
-  render() {
-    const meta = {
-      title: `Other`,
-      description: ``,
-      keywords: ``
+
+  static async getInitialProps({ query }) {
+    const page = (query.page) ? query.page : 1
+    const pageResults = await getOtherAPI()
+    const workResults = await getWorkAPI({
+      orderings: '[document.first_publication_date desc]' ,
+      page
+    })
+
+    return {
+      workData: workResults.results,
+      pageData: pageResults.results[0],
+      currentPage: page
     }
+  }
+
+  render() {
+    const {
+      workData = [],
+      pageData = [],
+      meta = {
+        title: `Other`,
+        description: ``,
+        keywords: ``
+      }
+    } = this.props
 
     return (
       <Layout meta={meta}>
         <Style.Wrapper>
-
-          <Style.Post data-aos="fade-up">
-            <Container>
-              <Row>
-                <Col xs={12} md={6}>
-                  <WYSIWYG data-aos="fade-right">
-                    <p><b>"Other"</b> – A dedication to the things I'm working on, have thought about or never ended up finishing.</p>
-                  </WYSIWYG>
-                </Col>
-              </Row>
-            </Container>
-          </Style.Post>
-
-          <Style.Post data-aos="fade-up">
-            <Container>
-              <Row>
-                <Col md={9}>
-                  <Image
-                    srcPreload={roula_1_thumbnail}
-                    srcLoaded={roula_1_fullsize}
-                    ratio={'6:4'}
-                    caption={{
-                      text: 'An exploration for the Roula Cycling rebrand — inspired by forward-motion and a continious wave.',
-                      align: 'right'
-                    }} />
-                </Col>
-              </Row>
-            </Container>
-          </Style.Post>
-
-          <Style.Post data-aos="fade-up">
-            <Container>
-              <Row>
-                <Col md={6} offset={{ md: 5 }}>
-                  <Video data={{
-                    src: 'md_film_SQ_02.mp4',
-                    type: 'hosted',
-                    ratio: '1:1',
-                    cap: 'Materiality experiments from the Research and Development phase of Master & Dynamics MW07 True Wireless Campaign.',
-                    capAlign: 'left'
-                  }} />
-                </Col>
-              </Row>
-            </Container>
-          </Style.Post>
-
-          <Style.Post data-aos="fade-up">
-            <Container>
-              <Row>
-                <Col>
-                  <Video data={{
-                    id: '290824916',
-                    type: 'vimeo',
-                    ratio: '2.35:1',
-                    cap: 'Dean & DeLuca: Performance titled "From Great to Greatness" — Directed by Lincoln Caplice.',
-                    capAlign: 'left'
-                  }} />
-                </Col>
-              </Row>
-            </Container>
-          </Style.Post>
-
-          <Style.Post data-aos="fade-up">
-            <Container>
-              <Row>
-                <Col md={8} offset={{ md: 3 }}>
-                  <Image
-                    srcPreload={cura_1_thumbnail}
-                    srcLoaded={cura_1_fullsize}
-                    ratio={'5:4'}
-                    caption={{
-                      text: 'ILA CURA Type Treatment — 07/18',
-                      align: 'center'
-                    }} />
-                </Col>
-              </Row>
-            </Container>
-          </Style.Post>
-
-          <Style.Post data-aos="fade-up">
-            <Container>
-              <Row>
-                <Col md={6} offset={{ md: 1 }}>
-                  <Video data={{
-                    src: 'md_film_SQ_01.mp4',
-                    type: 'hosted',
-                    ratio: '1:1',
-                    cap: 'Materiality experiments from the Research and Development phase of Master & Dynamics MW07 True Wireless Campaign.',
-                    capAlign: 'left'
-                  }} />
-                </Col>
-              </Row>
-            </Container>
-          </Style.Post>
-
+          <PageHeader content={pageData.data.body} />
+          {workData.map((post, index) => (
+            <GridWrapper
+              key={index}
+              columnSpan={parseInt(post.data.columnspan)}
+              columnOffset={parseInt(post.data.columnoffset)}>
+              <WorkContent data={post.data.body} />
+            </GridWrapper>
+            ))}
         </Style.Wrapper>
       </Layout>
     )
