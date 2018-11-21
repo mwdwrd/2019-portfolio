@@ -37,6 +37,7 @@ export default class CaseStudy extends React.Component {
     } = this.props
 
     const title = pageData.title[0].text
+    const client = pageData.client
     const introduction = pageData.introduction
     const year = pageData.year
     const agency = pageData.agency
@@ -64,7 +65,7 @@ export default class CaseStudy extends React.Component {
               <Col xs={12} md={6} offset={{ md: 3 }}>
                 <Style.Heading data-aos="fade-up">
                   <WYSIWYG>
-                    <h4>Master & Dynamic</h4>
+                    <h3>{client}</h3>
                     <h2>{title}</h2>
                   </WYSIWYG>
                 </Style.Heading>

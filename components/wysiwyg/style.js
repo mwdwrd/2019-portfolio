@@ -62,12 +62,20 @@ export const Wrapper = styled.div`
     font-family: 'Berthold', Arial, Helvetica, sans-serif;
     font-weight: 300;
     font-size: 40px;
-    line-height: 1.2;
+    line-height: 1;
   }
-  h4 {
+  h3 {
     font-family: 'Berthold', Arial, Helvetica, sans-serif;
     font-weight: 500;
     font-size: 20px;
     line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  h4 {
+    font-family: 'Berthold', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 1.2;
+    margin-bottom: 12px;
   }
 `

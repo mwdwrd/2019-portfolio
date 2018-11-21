@@ -18,9 +18,9 @@ export default class VimeoWrapper extends React.Component {
               id={data.primary.video_id}
               ratio={data.primary.ratio}
             />
-            {/* {data.primary.caption &&
+            {data.primary.caption &&
               <Caption caption={data.primary.caption} />
-            } */}
+            }
           </Style.Wrapper>
         </Col>
       </Row>

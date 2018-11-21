@@ -2,12 +2,18 @@ import ReactGA from 'react-ga'
 import { GA_ID } from './config'
 
 export const initGA = () => {
-  console.log('GA init')
-  ReactGA.initialize(GA_ID)
+  if(process.env.NODE_ENV === 'development') {
+    console.log('GA init')
+  }
+  ReactGA.initialize(GA_ID, {
+    debug: (process.env.NODE_ENV === 'development') ? true : false
+  })
 }
 
 export const logPageView = () => {
-  console.log(`Logging pageview for ${window.location.pathname}`)
+  if(process.env.NODE_ENV === 'development') {
+    console.log(`Logging pageview for ${window.location.pathname}`)
+  }
   ReactGA.set({ page: window.location.pathname })
   ReactGA.pageview(window.location.pathname)
 }

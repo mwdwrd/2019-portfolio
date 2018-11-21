@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import * as Style from './index.style.js'
 import { getHomeAPI } from '../util/api'
 import Layout from '../components/layout/index'
 import HoverGallery from '../components/hoverGallery/index'
