@@ -59,17 +59,15 @@ export const Wrapper = styled.div`
   }
 
   h2 {
-    font-family: 'AkzidenzGroteskBE-LightEx';
-    font-size: 44px;
-    line-height: 1.1;
-    font-weight: 100;
-    padding: 0;
-    margin: 0 0 62px 0;
-    letter-spacing: 0.1px;
-    max-width: 90%;
-
-    b {
-      color: #162C83;
-    }
+    font-family: 'Berthold', Arial, Helvetica, sans-serif;
+    font-weight: 300;
+    font-size: 40px;
+    line-height: 1.2;
+  }
+  h4 {
+    font-family: 'Berthold', Arial, Helvetica, sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.2;
   }
 `

@@ -3,6 +3,5 @@
   "alias": ["mwdwrd.com", "www.mwdwrd.com"],
   "github": {
     "enabled": false
-  },
-  "NOW_GITHUB_NODE_ENV": "production"
+  }
 }

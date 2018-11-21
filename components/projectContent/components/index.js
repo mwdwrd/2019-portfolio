@@ -1,6 +1,0 @@
-export { default as Audio } from './audio/index'
-export { default as Grid } from './grid/index'
-export { default as Image } from './image/index'
-export { default as Section } from './section/index'
-export { default as Text } from './text/index'
-export { default as Video } from './video/index'

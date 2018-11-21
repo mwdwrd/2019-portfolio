@@ -1,23 +1,4 @@
-import styled from 'styled-components';
-
-export const Title = styled.h1`
-  font-size: 16px;
-`
-
-export const AboutWrapper1 = styled.div`
-  height: 200px;
-  background-color: #ccc;
-`
-
-export const AboutWrapper2 = styled.div`
-  height: 1000px;
-  background-color: #ff55bb;
-`
-
-export const AboutWrapper3 = styled.div`
-  height: 2500px;
-  background-color: #ccc;
-`
+import styled from 'styled-components'
 
 export const JumpBar = styled.div`
   position: fixed;

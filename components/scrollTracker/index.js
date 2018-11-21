@@ -1,7 +1,7 @@
-import React from 'react';
-import * as Style from './about.style.js';
+import React from 'react'
+import * as Style from './style.js'
 
-export default class About extends React.Component {
+export default class ScrollTracker extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -61,16 +61,9 @@ export default class About extends React.Component {
     const { scrollPosition, loaded } = this.state
 
     return (
-      <div>
-
-        <Style.JumpBar loaded={loaded}>
-          <Style.JumpBarTracker topOffset={scrollPosition} />
-        </Style.JumpBar>
-
-        <Style.AboutWrapper1>About 1</Style.AboutWrapper1>
-        <Style.AboutWrapper2>About 2</Style.AboutWrapper2>
-        <Style.AboutWrapper3>About 3</Style.AboutWrapper3>
-      </div>
+      <Style.JumpBar loaded={loaded}>
+        <Style.JumpBarTracker topOffset={scrollPosition} />
+      </Style.JumpBar>
     )
   }
 }
