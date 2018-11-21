@@ -7,7 +7,5 @@ routes
 .add('other-pagination', '/other/page/:page', 'other')
 .add('case-study', '/case-studies/:slug', 'case-study')
 
-//.add('project', '/:uid', 'project')
 // .add('prints', '/prints', 'prints')
 // .add('case-studies', '/case-studies', 'case-studies')
-// .add('about', '/about', 'about')

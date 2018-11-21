@@ -1,6 +1,11 @@
 $aos-distance: 60px;
 @import '~aos/src/sass/aos.scss';
 @import "~video-react/styles/scss/video-react";
+@import "~react-soundplayer/styles/cover.css";
+@import "~react-soundplayer/styles/buttons.css";
+@import "~react-soundplayer/styles/icons.css";
+@import "~react-soundplayer/styles/progress.css";
+@import "~react-soundplayer/styles/volume.css";
 @import 'reset.scss';
 @import 'fonts.scss';
 @import 'global.scss';

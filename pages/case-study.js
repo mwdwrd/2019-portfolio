@@ -1,12 +1,14 @@
 import React from 'react'
-import * as Style from './case-study.style.js'
-import { getCaseStudyAPI } from '../util/api'
-import Layout from '../components/layout/index'
-
 import { Container, Row, Col } from 'react-grid-system'
+import { RichText } from 'prismic-reactjs'
+import * as Style from './case-study.style'
+
 import WYSIWYG from '../components/wysiwyg/index'
 import ExpanderList from '../components/expanderList/index'
-import { RichText } from 'prismic-reactjs'
+import Layout from '../components/layout/index'
+import PageContent from '../components/pageContent/index'
+
+import { getCaseStudyAPI } from '../util/api'
 import { linkResolver } from '../util/helper'
 
 export default class CaseStudy extends React.Component {
@@ -102,6 +104,9 @@ export default class CaseStudy extends React.Component {
             </Row>
 
           </Container>
+
+          <PageContent data={pageData.body}/>
+
         </Style.Wrapper>
       </Layout>
     )
