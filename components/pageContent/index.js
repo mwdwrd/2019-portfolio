@@ -4,6 +4,7 @@ import { Container } from 'react-grid-system'
 import {
   ImageGridWrapper,
   ImageWrapper,
+  VideoGridWrapper,
   VideoWrapper,
   VimeoWrapper,
   TextWrapper,
@@ -20,7 +21,7 @@ export default class PageContent extends React.Component {
       const contentItems = data.map((content, index) => {
         const type = content.slice_type
 
-        if(['image', 'vimeo', 'hosted_video', 'image_grid', 'text', 'spacer', 'audio'].indexOf(type) >= 0) {
+        if(['image', 'vimeo', 'hosted_video', 'image_grid', 'text', 'spacer', 'audio', 'video_grid'].indexOf(type) >= 0) {
           return (
             <Style.ContentItem key={index} data-aos="fade-up">
               {type === 'image_grid' && <ImageGridWrapper data={content} /> }
@@ -30,6 +31,7 @@ export default class PageContent extends React.Component {
               {type === 'text' && <TextWrapper data={content} /> }
               {type === 'spacer' && <SpacerWrapper data={content} /> }
               {type === 'audio' && <AudioWrapper data={content} /> }
+              {type === 'video_grid' && <VideoGridWrapper data={content} /> }
             </Style.ContentItem>
           )
         } else {
